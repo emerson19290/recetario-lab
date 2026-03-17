@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Frescas</title>
+    <link rel="stylesheet" href="DISEÑO.CSS">
+</head>
+
+<body>
+
+    <header>
+        <!-- LOGO DE LA PAGINA -->
+        <div class="logo">
+            <img src="LOGO5.png" alt="Logo del sitio">
+            <h1 class="logo-texto" style="color: #FFFFFF"> Recetario Lab </h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+            
+            <li><a href="INDEX.HTML">Inicio</a></li>
+
+            <li class="nav1">
+                <a href="#">Recetas ▾</a>
+                <ul class="nav1-menu">
+                    <li><a href="DESAYUNOS.HTML">Desayunos</a></li>
+                    <li><a href="PRINCIPALES.HTML">Principales</a></li>
+                </ul>
+            </li>
+            <li class="nav1">
+                <a href="#">Estilo de Vida ▾</a>
+                <ul class="nav1-menu">
+                    <li><a href="SALUDABLE.HTML">Saludable</a></li>
+                    <li><a href="POSTRES.HTML">Postres</a></li>
+                    <li><a href="COCTELES.HTML">Cócteles</a></li>
+                </ul>
+            </li>
+            <li><a href="BLOG.HTML">Blog</a></li>
+            <li><a href="CONTACTO.HTML">Contacto</a></li>
+            </ul>          
+        </nav>
+    </header>
+
+    <form>
+    <section class="formulario1">
+    <div class="formulario1">
+
+        <div class="formulario2">
+            <H1>Quiero compartir mi receta </H1>
+            <p class="formulario3">Completa todos los campos para compartir tu receta con la comunidad</p> 
+
+        <div class="formulario4">
+            <label for="autor">Nombre del Autor </label>
+            <input type="text" id="autor" placeholder="Tu nombre (Ingrese solo letras)" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+">
+            
+
+            <label for="receta">Titulo de la receta </label>
+            <input type="text" id="receta" placeholder="Nombre de tu receta (4 a 10 caracteres)" pattern=".{4,10}">
+
+            <label for="receta">Ingresa tu correo </label>
+            <input type="text" id="correo" placeholder="ejemplo@gmail.com" pattern="[^@]+@[^@]+">
+
+            <label for="categoria">Categoría:</label>
+                <select id="categoria" class="desplegable">
+                <option value="" disabled selected>Seleccionar categoría...</option>
+                <option value="desayuno">Desayuno</option>
+                <option value="almuerzo">Almuerzo</option>
+                <option value="cena">Cena</option>
+                <option value="postre">Postre</option>
+                <option value="bebida">Bebida</option>
+                <option value="Otro">Otro</option>
+                </select>
+            
+        <div class="formulario5">
+            <label for="pasos">Instrucciones paso a paso:</label>
+            <textarea id="pasos" name="pasos" placeholder="Describe el proceso detalladamente..."></textarea>
+        </div>
+
+        <div class="formulario6">
+            <h3>Información de Alérgenos:</h3>
+    
+            <label class="check">
+                <input type="checkbox" name="alergenos" value="gluten"> Contiene Gluten
+            </label>
+    
+            <label class="check">
+                <input type="checkbox" name="alergenos" value="lacteos"> Contiene Lácteos
+            </label>
+    
+            <label class="check">
+                <input type="checkbox" name="alergenos" value="frutos-secos"> Contiene Frutos Secos
+            </label>
+
+            <label class="check">
+                <input type="checkbox" name="alergenos" value="mariscos"> Contiene Mariscos
+            </label>
+
+            <label class="check">
+             <input type="checkbox" name="alergenos" value="huevo"> Contiene Huevo
+            </label>
+
+            <label class="check">
+             <input type="checkbox" name="alergenos" value="soja"> Contiene Soja
+            </label>
+        </div>
+
+
+    <div class="formulario7">
+        <h3>Nivel de Dificultad:</h3>
+
+        <div class="formulario8">
+            <label class="radio-item">
+                <input type="radio" name="dificultad" value="baja"> Baja
+            </label>
+        
+            <label class="radio-item">
+             <input type="radio" name="dificultad" value="media"> Media
+            </label>
+        
+            <label class="radio-item">
+                <input type="radio" name="dificultad" value="alta"> Alta
+            </label>
+        </div>
+    </div>
+
+    <div class="botones">
+        <button type="submit" class="btn-enviar">ENVIAR MI RECETA</button>
+        <button type="reset" class="btn-limpiar">LIMPIAR TODO</button>
+    </div>
+    
+    </div>
+</section>
+</form>
+
+</body>
+
+
+    <footer>
+
+        <p>© 2026 | DAW Project | Recetas Frescas</p>
+
+    </footer>
+
+
+
+</html>

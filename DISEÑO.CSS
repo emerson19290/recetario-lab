@@ -1,0 +1,968 @@
+/*DISEÑO GENERAL*/
+body {
+    margin: 0;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    padding-top: 60px;
+}
+
+/*tipografia*/
+
+h1, h2, h3 {
+    font-family: "Garamond", "Georgia", serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: "Garamond", "Georgia", serif;
+}
+
+/* HEADER */
+
+header {
+    background: #6B8E23;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; 
+    top: 0;         
+    left: 0;         
+    width: 100%;     
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.logo img {
+    height: 60px;
+    display: block;
+}
+
+.logo-texto {
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    white-space: nowrap;
+}
+/*------------------------------------------------------------------------------------------------------------------------------*/
+/*NAVEGACION*/
+.navbar {
+    background-color: #6b8e23;
+    padding: 0 20px;
+}
+.nav-links {
+    list-style: none;
+    display: flex; 
+}
+
+.nav-links > li > a {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+.nav1 {
+    position: relative;
+}
+
+.nav1-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav1-menu ul {
+    margin: 0;
+    padding: 0;
+
+}
+.nav1-menu li {
+    width: 100%;
+}
+.nav1-menu li a {
+    color: #333;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.nav1-menu li a:hover {
+    background-color: #f1f1f1;
+    color: #6b8e23;
+}
+.nav1:hover .nav1-menu {
+    display: block;
+}
+/* FOOTER */
+
+footer {
+    background: #1A1A1A;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+/*DISEÑO INICIO*/
+
+/* CONTENEDOR PRINCIPAL */
+.slider {
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 600%;
+    animation: carrusel 30s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slides img {
+    width: 16.666%;
+    height: 400px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.texto-carrusel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    z-index: 10;
+    text-align: center;    
+    white-space: nowrap;
+}
+
+.texto-carrusel h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.texto-carrusel p {
+    font-size: 30px;
+    margin: 0;
+}
+
+@keyframes carrusel {
+    
+    0%, 15% { transform: translateX(0); }
+   
+    20%, 35% { transform: translateX(-16.666%); }
+  
+    40%, 55% { transform: translateX(-33.333%); }
+
+    60%, 75% { transform: translateX(-50%); }
+    
+    80%, 95% { transform: translateX(-66.666%); }
+    
+    100% { transform: translateX(-83.333%); }
+}
+
+.categorias1 {
+    padding: 60px 20px;
+    text-align: center;
+}
+.categorias2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: serif; 
+}
+.categorias3 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-cate {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tarjeta-cate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; 
+}
+
+.categoria4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.5s ease;
+}
+
+.categoria4 p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.tarjeta-cate:hover img {
+    transform: scale(1.5);
+}
+
+.cubiertos {
+    font-size: 30px;
+    margin: 10px 0;
+    opacity: 1.0;
+    display: inline-block;
+  animation: rebote 1s infinite ease-in-out;
+}
+@keyframes rebote {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.nosotros {
+    background-color: #f4f4f4;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.filosofia {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.filosofia h2 {
+    font-size: 35px;
+}
+
+.filosofia p {
+    font-size: 18px;
+    color: #808080;
+}
+
+/*--------------------------------------------------------------------*/
+
+/*DISEÑO DESAYUNOS, PRINCIPALES, SALUDABLES, COCTELES*/
+
+.portada-des {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: 1;
+}
+
+.capa-degradado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0) 80%);
+    z-index: 2; 
+}
+
+.portada1 {
+    position: relative;
+    z-index: 3;
+    padding-left: 60px;
+    color: white;
+    max-width: 600px;
+}
+
+.portada1 h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.portada1 p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.desa1{
+     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.desa2{
+    background: #fff;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 5px 5px 10px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.desa2 img{
+    transition: transform 0.5s ease;
+    width: 200px;
+    border-radius: 20px;
+}
+.desa2:hover img{
+    transform: scale(1.1);
+}
+.desa3{
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.desa3:hover{
+    background-color: #1A1A1A;
+    
+}
+/*------------------------------------------------------------------------------------------------*/
+
+/*DISEÑO PAGINAS DE TODAS LAS RECETAS*/
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #d6d6d6;   
+    padding: 15px 80px;    
+    margin-top: 20px;
+    align-items: center;
+    min-width: 1200px;
+}
+
+.info2 {
+    display: flex;                 
+    align-items: center;         
+    gap: 12px;                    
+}
+
+.info4-tex {
+    line-height: 1.2;         
+    font-size: 20px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    display: inline-block;
+    animation: escribir 2s steps(30) forwards;
+}
+
+@keyframes escribir {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.info3-ico {
+    font-size: 1.5rem;          
+}
+
+.info4-tex b {
+    font-size: 20px;
+}
+
+.cuerpo-receta { 
+    display: flex; 
+    gap: 80px; 
+    margin-top: 40px; 
+    padding: 0 50px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.izquierda {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.ingredientes2 {
+    color: #6B8E23;
+    font-size: 30px;
+    font-family: "Garamond", "Georgia", serif;
+}
+
+.ingredientes3 {
+    list-style: '✔';
+}
+
+.ingredientes3 li {
+    padding-left: 30px;
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-family: "Garamond", "Georgia", serif;
+     opacity: 0;
+  transform: translateX(-20px);
+  animation: aparecerIngrediente 0.5s forwards;
+}
+
+/* Retrasos para que salgan uno a uno */
+.ingredientes3 li:nth-child(1) { animation-delay: 0.5s; }
+.ingredientes3 li:nth-child(2) { animation-delay: 1.0s; }
+.ingredientes3 li:nth-child(3) { animation-delay: 1.5s; }
+.ingredientes3 li:nth-child(4) { animation-delay: 2.0s; }
+.ingredientes3 li:nth-child(5) { animation-delay: 2.5s; }
+.ingredientes3 li:nth-child(6) { animation-delay: 3.0s; }
+
+@keyframes aparecerIngrediente {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.utencilios {
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.utencilios2 {
+    color: #7a9244;
+    margin-top: 0;
+    text-align: center;
+    font-family: "Garamond", "Georgia", serif;
+}
+
+.utencilios ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.utencilios li {
+    text-align: center;
+    padding: 10px;
+    font-family: "Garamond", "Georgia", serif;
+    font-size: 20px;
+    width: 100%;
+}
+
+.derecha {
+    flex: 1;
+    min-width: 700px;
+}
+
+.titulo-preparacion {
+    font-size: 70px;
+    font-family: "Garamond", "Georgia", serif;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    color: #6B8E23;
+    text-align: center;
+}
+
+.lista-pasos {
+    list-style: none;
+    counter-reset: paso; 
+    padding-left: 0; 
+}
+
+.lista-pasos li {
+    position: relative; 
+    padding-left: 90px; 
+    margin-bottom: 40px; 
+    font-family: "Garamond", serif; 
+    font-size: 20px; 
+    line-height: 1.5; 
+    min-height: 70px;
+}
+
+.lista-pasos li::before {
+    counter-increment: paso; 
+    content: counter(paso); 
+    position: absolute; 
+    left: 0; 
+    top: -10px; 
+    color: #7a9244; 
+    font-size: 70px; 
+    font-weight: bold; 
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+
+.contenedor-nutricional {
+  background-color: #e0e0e0;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Garamond", serif; 
+}
+
+.contenedor-nutricional h2 {
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: bold;
+  font-size: 30px;
+}
+.cards-flex {
+  display: flex;
+  justify-content: center; 
+  gap: 20px;                
+}
+
+.card {
+  background-color: #FF7F50;
+  padding: 25px 35px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px gray;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+.valor {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+
+/*DISEÑO PAGINAS NOTICIAS*/
+
+.noticia1 p{
+    text-align:justify;
+    margin: 30px;
+}
+.noticia1 button{
+    margin: 30px;
+}
+/*-------------------------------------------------------------------------------------------------------------*/
+
+/*DISEÑO PAGINA CONTACTO*/
+
+
+.formulario{
+    text-align: center;
+    justify-content: center;
+}
+
+.formulario1{
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.formulario2{
+    width: 100%;
+    max-width: 900px; /*TENGO QYE VALIDARLO*/
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.formulario2 h1{
+    color: #FF7F50;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.formulario3{
+    text-align: center;
+    font-size: 20px;
+}
+
+.formulario4{
+    font-family: 'Georgia', serif;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.formulario4 label{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+    padding: 20px;
+}
+
+.formulario4 input{
+    width: 100%;
+    padding: 15px; 
+     border: 2px solid #000; 
+    border-radius: 12px;
+    font-size: 18px;
+    color: #666;
+    box-sizing: border-box;
+    outline: none;
+    background-color: white;
+    transition: background-color 0.3s ease; 
+}
+
+input[type="text"]:not(:placeholder-shown) {
+    background-color: #A3BF6A;
+    color: white; 
+
+}
+
+.formulario4 select{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    background-color: #f0f0f0;
+    font-size: 18px;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.formulario4 select:not([value=""]):valid {
+    background-color: #A3BF6A;
+}
+
+.formulario5 label {
+    display: block;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+    padding: 20px; 
+}
+
+.formulario5 textarea {
+    width: 100%;
+    height: 250px; 
+    padding: 15px;
+    border: 2px solid #000; 
+    border-radius: 12px;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: #666;
+    box-sizing: border-box;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.formulario6 {
+    margin-top: 30px;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+.formulario6 h3 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: #333;
+}
+.formulario4 .check {
+     display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0;
+    cursor: pointer;
+    color: #333;
+}
+
+.check input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px; 
+    cursor: pointer;
+    accent-color: #A3BF6A;
+}
+
+.formulario7 {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.formulario7 h3 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.formulario8 {
+    display: flex;
+    gap: 30px;
+}
+
+.formulario4 .radio-item {
+    display: flex;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0;
+    cursor: pointer;
+    color: #333;
+}
+
+
+.radio-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    accent-color: #A3BF6A; 
+}
+
+.botones {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.botones button {
+    flex: 1; 
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s; 
+}
+
+
+.btn-enviar {
+    background-color: #FF8552; 
+}
+
+/* Color Verde para Limpiar */
+.btn-limpiar {
+    background-color: #70922D;
+}
+
+/* Efectos visuales */
+.botones button:hover {
+    opacity: 0.8; 
+}
+
+.botones button:active {
+    transform: scale(0.80); 
+}
+
+
+/*MEDIAQUIRE GENERAL DE TODAS LAS PAGINAS, HEADER, NAV Y FOOTER*/
+
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        position: static;
+    }
+
+    .logo {
+        margin: 0 auto 10px auto;
+        max-height: 70px;
+        width: auto;
+        display: block;
+    }
+
+    .logo-texto{
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links > li > a {
+        display: block;
+        font-size: 18px;
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav1-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+    }
+
+    .nav1:hover .nav1-menu {
+        display: block; /* Siempre visibles al tocar */
+    }
+}
+/*----------------------------------------------------------------------------------------------------*/
+@media (max-width: 600px) {
+    .slider {
+        height: 250px;
+    }
+
+    .slides img {
+        height: 250px;
+    }
+
+    .texto-carrusel h1 {
+        display: none;
+    }
+
+    .texto-carrusel p {
+        font-size: 18px;
+        white-space: normal;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .info {
+        flex-direction: column;
+        min-width: 100%;
+        padding: 20px 10px;
+        align-items: center; 
+    }
+
+    .info2 {
+        justify-content: center; 
+        text-align: center;
+        width: 100%;
+    }
+
+    .cuerpo-receta {
+        flex-direction: column;
+        align-items: center; 
+        padding: 0 20px;
+        min-width: 100%;
+        gap: 30px;
+    }
+
+    .izquierda, .derecha {
+        width: 100%;
+        text-align: center; 
+        min-width: 100%;
+    }
+
+    .ingredientes3 {
+        display: inline-block; 
+        text-align: left;  
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    .utencilios ul li {
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .titulo-preparacion {
+        font-size: 40px; 
+        text-align: center;
+    }
+
+    .lista-pasos li {
+        padding-left: 0;     
+        padding-top: 60px;  
+        text-align: center;   
+        margin-bottom: 50px;
+    }
+
+    .lista-pasos li::before {
+        left: 50%;          
+        transform: translateX(-50%); 
+        top: 0;
+        font-size: 50px;
+    }
+
+    .cards-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        align-items: center;
+    }
+}
+
