@@ -453,7 +453,6 @@ footer {
   animation: aparecerIngrediente 0.5s forwards;
 }
 
-/* Retrasos para que salgan uno a uno */
 .ingredientes3 li:nth-child(1) { animation-delay: 0.5s; }
 .ingredientes3 li:nth-child(2) { animation-delay: 1.0s; }
 .ingredientes3 li:nth-child(3) { animation-delay: 1.5s; }
@@ -609,7 +608,7 @@ footer {
 
 .formulario2{
     width: 100%;
-    max-width: 900px; /*TENGO QYE VALIDARLO*/
+    max-width: 900px;
     padding: 40px;
     border-radius: 15px;
     border: 1px solid #eee;
@@ -809,12 +808,11 @@ input[type="text"]:not(:placeholder-shown) {
     background-color: #FF8552; 
 }
 
-/* Color Verde para Limpiar */
+
 .btn-limpiar {
     background-color: #70922D;
 }
 
-/* Efectos visuales */
 .botones button:hover {
     opacity: 0.8; 
 }
@@ -871,7 +869,7 @@ input[type="text"]:not(:placeholder-shown) {
     }
 
     .nav1:hover .nav1-menu {
-        display: block; /* Siempre visibles al tocar */
+        display: block;
     }
 }
 /*----------------------------------------------------------------------------------------------------*/
